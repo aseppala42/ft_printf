@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "includes/ft_printf.h"
 #include <time.h>
 #include <stdio.h>
      
@@ -6,10 +6,10 @@ int	main()
 {
 	clock_t start, end;
 	double time;
-	char *print = "%s%s%s Kivaa %X aaaa\n%s";
+	char *print = "%s%s%s Kivaa %u aaaa\n%s";
 	long d = 77;
-	int a = -42;
-	double f = 123.1234567891011;
+	int a = 42;
+	double f = -123.1234567891011;
 	char *s = "kalakukko123";
 	char *n = 0;
 	char *ns = "\0";
@@ -34,6 +34,9 @@ int	main()
 	printf("\n");
 	ft_putstr(ft_uimaxtoa(4294967296, 16));
 */
-	ft_printf("%");
+	ft_printf("%*.*d\n", 0, 3, 0);
+	printf("%*.*d\n", 0, 3, 0);
+//	ft_printf("%.0p, %.p\n", 0, 0);
+//	printf("%.0p, %.p\n", 0, 0);
 	return (0);
 }

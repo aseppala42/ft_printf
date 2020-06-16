@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fmt.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/15 13:36:54 by aseppala          #+#    #+#             */
+/*   Updated: 2020/06/15 13:46:57 by aseppala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 char	*add_padding(t_format *specs, char *str, char *prefix)
@@ -17,7 +29,7 @@ char	*add_padding(t_format *specs, char *str, char *prefix)
 	return (str);
 }
 
-char	*add_prefix(char *str, char *prefix)
+static char	*add_prefix(char *str, char *prefix)
 {
 	char	*tmp;
 
@@ -27,20 +39,6 @@ char	*add_prefix(char *str, char *prefix)
 	ft_memset(ft_strpbrk(str, DIGITS), 0, 1);
 	return (ft_joindel(str, tmp));
 }
-/*
-char	*add_prefix(char *str, char *prefix)
-{
-	char	*tmp;
-
-	if (*str != ' ')
-		return (ft_joindel(prefix, str));
-	tmp = ft_strnew(ft_strlen(str) + 1);
-	ft_strncpy(tmp, str, ft_strcspn(str, DIGITS));
-	ft_strcat(tmp, ft_joindel(prefix, ft_strdup(ft_strpbrk(str, DIGITS))));
-	ft_strdel(&str);
-	return (tmp);
-}
-*/
 
 char	*fmt_num(t_format *specs, char *str, char *prefix)
 {
@@ -48,7 +46,8 @@ char	*fmt_num(t_format *specs, char *str, char *prefix)
 
 	if (*str == '-')
 		ft_strlcpy(str, str + 1, ft_strlen(str));
-	else if ((specs->type == 'd' || specs->type == 'i' || specs->type == 'f') && specs->flags && ft_strchr(specs->flags, '+'))
+	else if ((specs->type == 'd' || specs->type == 'i' || specs->type == 'f') \
+		&& specs->flags && ft_strchr(specs->flags, '+'))
 		prefix = ft_strdup("+");
 	else if (!prefix && specs->flags && ft_strchr(specs->flags, ' '))
 		prefix = ft_strdup(" ");

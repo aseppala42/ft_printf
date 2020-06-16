@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/15 13:37:03 by aseppala          #+#    #+#             */
+/*   Updated: 2020/06/15 13:46:14 by aseppala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void	next_arg(va_list args[3], int param)
+static void	next_arg(va_list args[3], int param)
 {
 	if (!param)
 		return ;
@@ -10,7 +22,7 @@ void	next_arg(va_list args[3], int param)
 		va_arg(args[PARAM], void *);
 }
 
-char	*conversion_specifier(char *format, va_list args[3])
+static char	*conversion_specifier(char *format, va_list args[3])
 {
 	char		*tmp;
 	t_format	*specs;
@@ -21,7 +33,7 @@ char	*conversion_specifier(char *format, va_list args[3])
 	tmp = ft_strndup(format, ft_strcspn(format, TYPE_OPTIONS) + 1);
 	if (init_specs(&specs, tmp, args[ARGS]))
 	{
-		next_arg(args,specs->param);
+		next_arg(args, specs->param);
 		tmp = conversion(specs, specs->param ? args[PARAM] : args[ARGS]);
 		format = ft_strpbrk(format, TYPE_OPTIONS);
 	}
@@ -31,7 +43,7 @@ char	*conversion_specifier(char *format, va_list args[3])
 	return (format ? ft_joindel(tmp, sprint(++format, args)) : tmp);
 }
 
-char	*sprint(char *format, va_list args[3])
+static char	*sprint(char *format, va_list args[3])
 {
 	if (!format || *format == 0)
 		return (0);

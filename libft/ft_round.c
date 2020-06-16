@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_round.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/15 12:52:38 by aseppala          #+#    #+#             */
+/*   Updated: 2020/06/15 17:04:08 by aseppala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 double	ft_round(double x)
@@ -6,16 +18,3 @@ double	ft_round(double x)
 		return ((intmax_t)x);
 	return (x < 0 ? ft_floor(x) : ft_ceil(x));
 }
-/*
-intmax_t	ft_round(long double x)
-{
-	return (x < 0 ? x - 0.5 : x + 0.5);
-}
-
-double	ft_round(double x)
-{
-	if (x < 0)
-		return (ft_fabs(x) - ft_imaxabs(x) < 0.5 ? (intmax_t)x : ft_floor(x));
-	return (ft_fabs(x) - ft_imaxabs(x) < 0.5 ? (intmax_t)x : ft_ceil(x));
-}
-*/

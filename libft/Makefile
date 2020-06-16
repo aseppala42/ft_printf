@@ -6,7 +6,7 @@
 #    By: aseppala <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 10:50:45 by aseppala          #+#    #+#              #
-#    Updated: 2019/12/06 15:23:54 by aseppala         ###   ########.fr        #
+#    Updated: 2020/06/16 13:26:07 by aseppala         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ ft_imaxabs.c ft_fabs.c ft_fabsl.c ft_pow.c ft_powl.c ft_ftoa.c ft_sqrt.c\
 ft_sqrtl.c ft_ceil.c ft_ceill.c ft_floor.c ft_floorl.c ft_round.c ft_roundl.c\
 ft_fequal.c ft_fequall.c ft_fmax.c ft_fmaxl.c ft_fmin.c ft_fminl.c ft_max.c\
 ft_min.c ft_fmod.c ft_fmodl.c ft_modf.c ft_modfl.c ft_setprecision.c ft_trunc.c\
-ft_truncl.c ft_strtok.c ft_iswspace.c
+ft_truncl.c ft_strtok.c ft_iswspace.c ft_numlen.c
 OBJ = $(SRC:.c=.o)
 HDR = includes
 

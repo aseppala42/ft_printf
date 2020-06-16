@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fmax.c                                          :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/15 12:59:06 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 12:59:09 by aseppala         ###   ########.fr       */
+/*   Created: 2020/06/16 13:25:10 by aseppala          #+#    #+#             */
+/*   Updated: 2020/06/16 13:25:47 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-double	ft_fmax(double x, double y)
+size_t	ft_numlen(int n)
 {
-	return (x > y ? x : y);
+	if (n < 0)
+		return (1 + ft_numlen(-n));
+	if (n > 9)
+		return (1 + ft_numlen(n / 10));
+	return (1);
 }

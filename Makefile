@@ -6,7 +6,7 @@
 #    By: aseppala <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/21 10:09:10 by aseppala          #+#    #+#              #
-#    Updated: 2019/11/20 19:51:43 by aseppala         ###   ########.fr        #
+#    Updated: 2020/06/15 13:38:50 by aseppala         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FLAGS = #-Wall -Wextra -Werror
 
 SRC = ft_printf.c specs.c parse_specs.c conversion.c type.c fmt.c
 OBJ = $(SRC:.c=.o) 
-HDR = .
+HDR = includes/
 
 .PHONY: all clean fclean re
 

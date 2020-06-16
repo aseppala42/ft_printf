@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_specs.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/15 13:37:24 by aseppala          #+#    #+#             */
+/*   Updated: 2020/06/15 13:37:26 by aseppala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	parse_param(char *param)
@@ -29,6 +41,8 @@ int	parse_precision(char *precision, va_list args)
 		return (ft_atoi(++precision));
 	else if (*precision == '.' && *(precision + 1) == '*')
 		return (va_arg(args, int));
+	else if (*precision == '.')
+		return (0);
 	return (-1);
 }
 

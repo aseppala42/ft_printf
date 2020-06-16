@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   conversion.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/15 13:36:45 by aseppala          #+#    #+#             */
+/*   Updated: 2020/06/15 17:55:57 by aseppala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 char	*conversion(t_format *specs, va_list args)
@@ -10,12 +22,13 @@ char	*conversion(t_format *specs, va_list args)
 	if (specs->type == 'f')
 		return (type_float(specs, args));
 	if (specs->type == 'c')
-		return (type_str(specs, ft_chrjoin((char)va_arg(args, unsigned int), 0)));
+		return (type_str(specs, \
+			ft_chrjoin((char)va_arg(args, unsigned int), 0)));
 	if (specs->type == 's')
 		return (type_str(specs, va_arg(args, char *)));
 	if (specs->type == 'p')
 		return (type_ptr(specs, (uintmax_t)va_arg(args, unsigned long)));
 	if (specs->type == '%')
-		return (type_str(specs, ft_strdup("%")));
+		return (add_padding(specs, ft_strdup("%"), 0));
 	return (0);
 }
