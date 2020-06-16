@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:40 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/16 12:42:34 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/16 16:55:21 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*type_int(t_format *specs, va_list args)
 		num = (intmax_t)va_arg(args, int);
 	else
 		return (0);
+	if (num == 0 && specs->precision == 0)
+		return (fmt_num(specs, ft_strdup(""), 0));
 	return (fmt_num(specs, ft_imaxtoa(num, 10), num < 0 ? ft_strdup("-") : 0));
 }
 
@@ -51,6 +53,11 @@ char	*type_uint(t_format *specs, va_list args)
 		num = (uintmax_t)va_arg(args, unsigned int);
 	else
 		return (0);
+	if (specs->type == 'o' && specs->precision == 0 && specs->flags \
+		&& ft_strchr(specs->flags, '#'))
+		specs->precision = 1;
+	if (num == 0 && specs->precision == 0)
+		return (fmt_num(specs, ft_strdup(""), 0));
 	if (specs->type == 'o')
 		return (fmt_num(specs, ft_uimaxtoa(num, 8), num && specs->flags \
 			&& ft_strchr(specs->flags, '#') ? ft_strdup("0") : 0));
