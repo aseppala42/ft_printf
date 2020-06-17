@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:40 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/16 16:55:21 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/16 21:23:29 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ void	*type_float(t_format *specs, va_list args)
 
 char	*type_ptr(t_format *specs, uintmax_t ptr)
 {
+	if (ptr == 0 && specs->precision == 0)
+		return (fmt_num(specs, ft_strdup(""), ft_strdup("0x")));
 	return (fmt_num(specs, ft_uimaxtoa(ptr, 16), ft_strdup("0x")));
 }
 

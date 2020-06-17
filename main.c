@@ -38,10 +38,13 @@ int	main()
 	printf("%lld\n", -9223372036854775808);
 //	ft_printf("%lx\n", 4294967296);
 //	printf("%lx\n", 4294967296);
-//	ft_printf("%*.*d\n", 0, 3, 0);
-//	printf("%*.*d\n", 0, 3, 0);
-//	ft_printf("%.0p, %.p\n", 0, 0);
-//	printf("%.0p, %.p\n", 0, 0);
+
+	ft_printf("%*.*d\n", 0, 3, 0);
+	printf("%*.*d\n", 0, 3, 0);
+
+	ft_printf("%.0p, %.p\n", 0, 0);
+	printf("%.0p, %.p\n", 0, 0);
+
   ft_printf("%x\n", -42);
   printf("%x\n", -42);
 
@@ -156,5 +159,22 @@ int	main()
   ft_printf("%llu\n", 4999999999);
   printf("%llu\n", 4999999999);
 
+	ft_printf("%*s\n", -32, "abc");
+	printf("%*s\n", -32, "abc");
+
+	ft_printf("%-32s\n", "abc");
+	printf("%-32s\n", "abc");
+
+	ft_printf("{%*3d}\n", 5, 0);
+	printf("{%*3d}\n", 5, 0);
+
+	ft_printf("{%.c}\n", 0);
+	printf("{%.c}\n", 0);
+
+	ft_printf("{%*c}\n", 0, 0);
+	printf("{%*c}\n", 0, 0);
+
+	ft_printf("%#c\n", 0);
+	printf("%#c\n", 0);
 	return (0);
 }

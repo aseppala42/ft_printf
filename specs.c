@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:33 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/16 17:07:47 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/16 21:06:14 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	init_specs(t_format **specs, char *format, va_list args)
 	if (((*specs)->width = parse_width(format, args)) < 0)
 	{
 		(*specs)->width *= -1;
-		ft_joindel(ft_strdup("-"), (*specs)->flags);
+		(*specs)->flags = ft_joindel(ft_strdup("-"), (*specs)->flags);
 	}
 	while (ft_isdigit(*format) || ft_isspace(*format) || *format == '*')
 		format++;
