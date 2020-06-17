@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:03 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 15:47:24 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 16:06:25 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,13 @@ static char	*conversion_specifier(char *format, va_list args[3])
 	new_specs(&specs);
 	if (init_specs(&specs, tmp, args[ARGS]))
 	{
+		ft_strdel(&tmp);
 		next_arg(args, specs->param);
 		tmp = conversion(specs, specs->param ? args[PARAM] : args[ARGS]);
 		format = ft_strpbrk(format, TYPE_OPTIONS) + 1;
 	}
 	else
-		tmp = 0;
+		ft_strdel(&tmp);
 	del_specs(&specs);
 	return (format ? ft_joindel(tmp, sprint(format, args)) : tmp);
 }
