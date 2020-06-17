@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:11 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 18:24:20 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 19:05:46 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ char			*type_uint(t_format *specs, va_list args);
 char			*type_ptr(t_format *specs, uintmax_t ptr);
 char			*type_str(t_format *specs, char *str);
 char			*fmt_num(t_format *specs, char *str, char *prefix);
+char			*fmt_unum(t_format *specs, uintmax_t num);
 char			*add_padding(t_format *specs, char *str, char *prefix);
 static char		*add_prefix(char *str, char *prefix);
 int				init_specs(t_format **specs, char *format, va_list args);

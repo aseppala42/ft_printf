@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:36:54 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 18:16:04 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 19:26:32 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,30 @@ static char	*add_prefix(char *str, char *prefix)
 	tmp = ft_joindel(prefix, ft_strdup(ft_strpbrk(str, DIGITS)));
 	ft_memset(ft_strpbrk(str, DIGITS), 0, 1);
 	return (ft_joindel(str, tmp));
+}
+
+char		*fmt_unum(t_format *specs, uintmax_t num)
+{
+	if (specs->type == 'o' && specs->precision == 0 && specs->flags \
+		&& ft_strchr(specs->flags, '#'))
+		specs->precision = 1;
+	if (num == 0 && specs->precision == 0)
+		return (fmt_num(specs, ft_strdup(""), 0));
+	else if (specs->type == 'o')
+		return (fmt_num(specs, ft_uimaxtoa(num, 8), num && specs->flags \
+			&& ft_strchr(specs->flags, '#') ? ft_strdup("0") : 0));
+	else if (specs->type == 'u')
+		return (fmt_num(specs, ft_uimaxtoa(num, 10), 0));
+	else if (specs->type == 'x')
+		return (fmt_num(specs, ft_uimaxtoa(num, 16), num && specs->flags \
+			&& ft_strchr(specs->flags, '#') ? ft_strdup("0x") : 0));
+	else if (specs->type == 'X')
+		return (ft_strupr(fmt_num(specs, ft_uimaxtoa(num, 16), num \
+			&& specs->flags && ft_strchr(specs->flags, '#') ? \
+			ft_strdup("0X") : 0)));
+	else if (specs->type == 'b')
+		return (fmt_num(specs, ft_uimaxtoa(num, 2), 0));
+	return (0);
 }
 
 char		*fmt_num(t_format *specs, char *str, char *prefix)

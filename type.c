@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:40 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 18:19:38 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 19:01:00 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,32 +61,7 @@ char			*type_uint(t_format *specs, va_list args)
 		num = va_arg(args, uintmax_t);
 	else
 		return (0);
-	if (specs->type == 'o' && specs->precision == 0 && specs->flags \
-		&& ft_strchr(specs->flags, '#'))
-		specs->precision = 1;
-	if (num == 0 && specs->precision == 0)
-		return (fmt_num(specs, ft_strdup(""), 0));
-	if (specs->type == 'o')
-	{
-		return (fmt_num(specs, ft_uimaxtoa(num, 8), num && specs->flags \
-			&& ft_strchr(specs->flags, '#') ? ft_strdup("0") : 0));
-	}
-	if (specs->type == 'u')
-		return (fmt_num(specs, ft_uimaxtoa(num, 10), 0));
-	if (specs->type == 'x')
-	{
-		return (fmt_num(specs, ft_uimaxtoa(num, 16), num && specs->flags \
-			&& ft_strchr(specs->flags, '#') ? ft_strdup("0x") : 0));
-	}
-	if (specs->type == 'X')
-	{
-		return (ft_strupr(fmt_num(specs, ft_uimaxtoa(num, 16), num \
-			&& specs->flags && ft_strchr(specs->flags, '#') ? \
-			ft_strdup("0X") : 0)));
-	}
-	if (specs->type == 'b')
-		return (fmt_num(specs, ft_uimaxtoa(num, 2), 0));
-	return (0);
+	return (fmt_unum(specs, num));
 }
 
 void			*type_float(t_format *specs, va_list args)
