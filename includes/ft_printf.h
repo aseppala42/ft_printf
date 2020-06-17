@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:11 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 19:05:46 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 20:41:59 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ typedef struct	s_format
 }				t_format;
 
 int				ft_printf(const char *restrict format, ...);
-static char		*sprint(char *format, va_list args[3]);
-static char		*conversion_specifier(char *format, va_list args[3]);
-static char		parse_type(char *type);
+char			*sprint(char *format, va_list args[3]);
 int				parse_param(char *specs);
 char			*parse_flags(char *specs);
 int				parse_width(char *specs, va_list args);
@@ -55,9 +53,14 @@ char			*type_str(t_format *specs, char *str);
 char			*fmt_num(t_format *specs, char *str, char *prefix);
 char			*fmt_unum(t_format *specs, uintmax_t num);
 char			*add_padding(t_format *specs, char *str, char *prefix);
-static char		*add_prefix(char *str, char *prefix);
 int				init_specs(t_format **specs, char *format, va_list args);
 void			del_specs(t_format **specs);
 void			new_specs(t_format **specs);
+int				ft_asprintf(char **ret, const char *format, ...);
+int				ft_dprintf(int fd, const char *restrict format, ...);
+int				ft_snprintf(char *restrict str, size_t size, \
+					const char *restrict format, ...);
+int				ft_sprintf(char *restrict str, \
+					const char *restrict format, ...);
 
 #endif

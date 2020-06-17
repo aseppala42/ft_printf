@@ -193,6 +193,27 @@ int	main()
 	ft_printf("zd:\t%zd\n", 1234);
 	ft_printf("zu:\t%zu\n", 1234);
 	ft_printf("b(100):\t%b\n", 100);
-	ft_printf("llb(12345678910):\t%llb\n", 12345678910);
+	ft_printf("llb(12345678910):\t%llb\n\n", 12345678910);
+	char sss[50];
+	ft_sprintf(sss, "ft_sprintf:\t%jd\n", MAX_LL);
+	ft_printf("ft_sprintf str:\t%s\n", sss);
+	sprintf(sss, "nr_sprintf:\t%jd\n", MAX_LL);
+	printf("nr_sprintf str:\t%s\n", sss);
+
+	ft_snprintf(sss, 10, "ft_snprintf:\t%jd\n", MAX_LL);
+	ft_printf("ft_snprintf str, 10 size:\t%s}\n", sss);
+	write(1, "\n", 1);
+	snprintf(sss, 10, "nr_snprintf:\t%jd\n", MAX_LL);
+	printf("nr_snprintf str, 10 size:\t%s}\n", sss);
+	write(1, "\n", 1);
+
+	char *kkk;
+	ft_asprintf(&kkk, "ft_asprintf:\t%jd\n", MAX_LL);
+	ft_printf("ft_asprintf str:\t%s\n", kkk);
+	asprintf(&kkk, "nr_asprintf:\t%jd\n", MAX_LL);
+	printf("nr_asprintf str:\t%s\n", kkk);
+
+	ft_dprintf(2, "ju:\t%ju\n", MAX_LL);
+	dprintf(2, "ju:\t%ju\n", MAX_LL);
 	return (0);
 }
