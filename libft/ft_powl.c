@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:58:51 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 17:06:43 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:26:44 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@
 **}
 */
 
-long double	ft_powl(long double base, int exp)
+long double		ft_powl(long double base, int exp)
 {
 	long double	res;
-	int		i;
+	int			i;
 
 	res = 1;
 	i = ft_abs(exp);

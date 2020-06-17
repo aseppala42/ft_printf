@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:01:55 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 17:54:16 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:28:47 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ static size_t	ft_uimaxlen(uintmax_t n, unsigned int base)
 **}
 */
 
-char		*ft_uimaxtoa(uintmax_t n, int base)
+char			*ft_uimaxtoa(uintmax_t n, int base)
 {
-	char	*str;
-	char	*tmp;
+	char		*str;
+	char		*tmp;
 
 	if (base < MIN_BASE || base > MAX_BASE)
 		return (0);

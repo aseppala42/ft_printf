@@ -6,17 +6,17 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:45:29 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 16:52:30 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:25:26 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**char	*ft_ftoa(long double n, int precision)
+**char			*ft_ftoa(long double n, int precision)
 **{
 **	long double	iprt;
-**	int		len;
+**	int			len;
 **	char		*str;
 **
 **	n = ft_fabsl(ft_setprecision(ft_modfl(n, &iprt), precision));
@@ -27,10 +27,10 @@
 **}
 */
 
-char	*ft_ftoa(long double n, int precision)
+char			*ft_ftoa(long double n, int precision)
 {
 	long double	iprt;
-	int		len;
+	int			len;
 	char		*str;
 
 	n = ft_fabsl(ft_roundl(ft_modfl(n, &iprt) * ft_powl(10, precision)));

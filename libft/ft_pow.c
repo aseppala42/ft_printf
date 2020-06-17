@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:55:02 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 17:05:22 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:26:23 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@
 **}
 */
 
-double	ft_pow(double base, int exp)
+double		ft_pow(double base, int exp)
 {
 	double	res;
-	int	i;
+	int		i;
 
 	res = 1;
 	i = ft_abs(exp);

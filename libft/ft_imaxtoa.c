@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:54:22 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 13:27:42 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:31:01 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,11 @@ static size_t	ft_imaxlen(intmax_t n, int base)
 **}
 */
 
-char		*ft_imaxtoa(intmax_t n, int base)
+char			*ft_imaxtoa(intmax_t n, int base)
 {
-	char	*str;
-	char	*tmp;
-	int	sign;
+	char		*str;
+	char		*tmp;
+	int			sign;
 
 	if (n < -MAX_LL)
 		return (ft_strdup("-9223372036854775808"));

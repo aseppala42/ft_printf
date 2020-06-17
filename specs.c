@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:33 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 15:47:04 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:21:10 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	parse_type(char *type)
 	return (0);
 }
 
-void	new_specs(t_format **specs)
+void		new_specs(t_format **specs)
 {
 	*specs = (t_format *)malloc(sizeof(t_format));
 	(*specs)->type = 0;
@@ -30,7 +30,7 @@ void	new_specs(t_format **specs)
 	(*specs)->length = 0;
 }
 
-int	init_specs(t_format **specs, char *format, va_list args)
+int			init_specs(t_format **specs, char *format, va_list args)
 {
 	if (!((*specs)->type = parse_type(format)))
 		return (0);
@@ -56,7 +56,7 @@ int	init_specs(t_format **specs, char *format, va_list args)
 	return (1);
 }
 
-void	del_specs(t_format **specs)
+void		del_specs(t_format **specs)
 {
 	ft_strdel(&(*specs)->flags);
 	ft_strdel(&(*specs)->length);

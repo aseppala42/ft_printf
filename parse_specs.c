@@ -6,13 +6,13 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:24 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 13:37:26 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:20:27 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	parse_param(char *param)
+int		parse_param(char *param)
 {
 	if (ft_strchr(param, '$') && ft_isdigit(*param))
 		return (ft_atoi(param));
@@ -26,7 +26,7 @@ char	*parse_flags(char *flags)
 	return (0);
 }
 
-int	parse_width(char *width, va_list args)
+int		parse_width(char *width, va_list args)
 {
 	if (ft_isdigit(*width))
 		return (ft_atoi(width));
@@ -35,7 +35,7 @@ int	parse_width(char *width, va_list args)
 	return (0);
 }
 
-int	parse_precision(char *precision, va_list args)
+int		parse_precision(char *precision, va_list args)
 {
 	if (*precision == '.' && ft_isdigit(*(precision + 1)))
 		return (ft_atoi(++precision));

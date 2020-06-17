@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 13:50:52 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/16 13:42:51 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:29:21 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char		*ft_itoa(int n)
 {
 	char	*str;
 	char	*tmp;
-	int	sign;
+	int		sign;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));

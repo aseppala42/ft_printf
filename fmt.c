@@ -6,15 +6,15 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:36:54 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 13:57:47 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:16:04 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*add_padding(t_format *specs, char *str, char *prefix)
+char		*add_padding(t_format *specs, char *str, char *prefix)
 {
-	int	len;
+	int		len;
 
 	len = specs->width - ft_strlen(str) - (!prefix ? 0 : ft_strlen(prefix));
 	if (len > 0)
@@ -40,9 +40,9 @@ static char	*add_prefix(char *str, char *prefix)
 	return (ft_joindel(str, tmp));
 }
 
-char	*fmt_num(t_format *specs, char *str, char *prefix)
+char		*fmt_num(t_format *specs, char *str, char *prefix)
 {
-	int	len;
+	int		len;
 
 	if (*str == '-')
 		ft_strlcpy(str, str + 1, ft_strlen(str));

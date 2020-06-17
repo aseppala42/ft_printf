@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:02:04 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 17:52:15 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:34:02 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static uintmax_t	ft_recursive_atouimax(const char *str, char **endptr, \
 		ft_strclen(digits, ft_tolower(*str))));
 }
 
-uintmax_t		ft_atouimax(const char *str, char **endptr, int base)
+uintmax_t			ft_atouimax(const char *str, char **endptr, int base)
 {
-	char	*digits;
+	char			*digits;
 
 	if (endptr)
 		*endptr = (char *)str;
@@ -42,10 +42,10 @@ uintmax_t		ft_atouimax(const char *str, char **endptr, int base)
 }
 
 /*
-**uintmax_t			ft_atouimax(const char *str, char **endptr, int base)
+**uintmax_t		ft_atouimax(const char *str, char **endptr, int base)
 **{
-**	char	*digits;
-**	int	res;
+**	char		*digits;
+**	int			res;
 **
 **	if (endptr)
 **		*endptr = str;

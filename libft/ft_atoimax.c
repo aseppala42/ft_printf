@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:06:46 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 17:48:22 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 18:33:29 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static intmax_t	ft_recursive_atoimax(const char *str, char **endptr, int base, \
 		ft_strclen(digits, ft_tolower(*str))));
 }
 
-intmax_t	ft_atoimax(const char *str, char **endptr, int base)
+intmax_t		ft_atoimax(const char *str, char **endptr, int base)
 {
-	char	*digits;
+	char		*digits;
 
 	if (endptr)
 		*endptr = (char *)str;
@@ -44,11 +44,11 @@ intmax_t	ft_atoimax(const char *str, char **endptr, int base)
 }
 
 /*
-**intmax_t			ft_atoimax(const char *str, char **endptr, int base)
+**intmax_t		ft_atoimax(const char *str, char **endptr, int base)
 **{
-**	char	*digits;
-**	int	res;
-**	int	sign;
+**	char		*digits;
+**	int			res;
+**	int			sign;
 **
 **	if (endptr)
 **		*endptr = str;
