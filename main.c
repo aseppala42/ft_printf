@@ -186,5 +186,13 @@ int	main()
 
 	ft_printf("%\n");
 	printf("%\n");
+
+	ft_printf("\n\nBONUS\n");
+	ft_printf("jd:\t%jd\n", MAX_LL);
+	ft_printf("ju:\t%ju\n", MAX_LL);
+	ft_printf("zd:\t%zd\n", 1234);
+	ft_printf("zu:\t%zu\n", 1234);
+	ft_printf("b(100):\t%b\n", 100);
+	ft_printf("llb(12345678910):\t%llb\n", 12345678910);
 	return (0);
 }

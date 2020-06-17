@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:11 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 15:46:02 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 16:43:42 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <stdarg.h>
 # include "../libft/includes/libft.h"
 
-# define TYPE_OPTIONS	"cspfdiouxX%"
+# define TYPE_OPTIONS	"cspfdiouxXb%"
 # define FLAG_OPTIONS	"#0-+ "
-# define LENGTH_OPTIONS	"hlL"
+# define LENGTH_OPTIONS	"hlLzj"
 
 enum	e_args
 {

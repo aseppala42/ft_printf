@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:40 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 15:54:28 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 16:46:17 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ char	*type_int(t_format *specs, va_list args)
 		num = va_arg(args, long long);
 	else if (!ft_strcmp(specs->length, "L"))
 		num = va_arg(args, int);
+	else if (!ft_strcmp(specs->length, "z"))
+		num = va_arg(args, size_t);
+	else if (!ft_strcmp(specs->length, "j"))
+		num = va_arg(args, intmax_t);
 	else
 		return (0);
 	if (num == 0 && specs->precision == 0)
@@ -51,6 +55,10 @@ char	*type_uint(t_format *specs, va_list args)
 		num = va_arg(args, unsigned long long);
 	else if (!ft_strcmp(specs->length, "L"))
 		num = va_arg(args, unsigned int);
+	else if (!ft_strcmp(specs->length, "z"))
+		num = va_arg(args, size_t);
+	else if (!ft_strcmp(specs->length, "j"))
+		num = va_arg(args, uintmax_t);
 	else
 		return (0);
 	if (specs->type == 'o' && specs->precision == 0 && specs->flags \
@@ -70,6 +78,8 @@ char	*type_uint(t_format *specs, va_list args)
 		return (ft_strupr(fmt_num(specs, ft_uimaxtoa(num, 16), num \
 			&& specs->flags && ft_strchr(specs->flags, '#') ? \
 			ft_strdup("0X") : 0)));
+	if (specs->type == 'b')
+		return (fmt_num(specs, ft_uimaxtoa(num, 2), 0));
 	return (0);
 }
 
