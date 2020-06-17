@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:54:22 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 17:40:34 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 13:27:42 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ static size_t	ft_imaxlen(intmax_t n, int base)
 **	char	*str;
 **	size_t	len;
 **
+**	if (n < -MAX_LL)
+**		return (ft_strdup("-9223372036854775808"));
 **	if ((n < 0 && base != 10) || base < MIN_BASE || base > MAX_BASE)
 **		return (0);
 **	len = ft_imaxlen(n, base);
@@ -70,6 +72,8 @@ static size_t	ft_imaxlen(intmax_t n, int base)
 **{
 **	char	*str;
 **
+**	if (n < -MAX_LL)
+**		return (ft_strdup("-9223372036854775808"));
 **	if ((n < 0 && base != 10) || base < MIN_BASE || base > MAX_BASE)
 **		return (0);
 **	if (!(str = ft_strnew(ft_imaxlen(n, base))))
@@ -84,6 +88,8 @@ char		*ft_imaxtoa(intmax_t n, int base)
 	char	*tmp;
 	int	sign;
 
+	if (n < -MAX_LL)
+		return (ft_strdup("-9223372036854775808"));
 	if ((n < 0 && base != 10) || base < MIN_BASE || base > MAX_BASE)
 		return (0);
 	if (!(str = ft_strnew(ft_imaxlen(n, base))))
@@ -102,6 +108,8 @@ char		*ft_imaxtoa(intmax_t n, int base)
 /*
 **char		*ft_imaxtoa(intmax_t n, int base)
 **{
+**	if (n < -MAX_LL)
+**		return (ft_strdup("-9223372036854775808"));
 **	if ((n < 0 && base != 10) || base < MIN_BASE || base > MAX_BASE)
 **		return (0);
 **	if (n < 0)

@@ -28,16 +28,11 @@ int	main()
 	end = clock();
 	time = ((double) (end - start)) / CLOCKS_PER_SEC;
 	printf("%f\n", time);
-/*	ft_printf("%#llx", 9223372036854775807);
-	printf("\n");
-	printf("%#llx", 9223372036854775807);
-	printf("\n");
-	ft_putstr(ft_uimaxtoa(4294967296, 16));
-*/
+
 	ft_printf("%lld\n", -9223372036854775808);
 	printf("%lld\n", -9223372036854775808);
-//	ft_printf("%lx\n", 4294967296);
-//	printf("%lx\n", 4294967296);
+	ft_printf("%lx\n", 4294967296);
+	printf("%lx\n", 4294967296);
 
 	ft_printf("%*.*d\n", 0, 3, 0);
 	printf("%*.*d\n", 0, 3, 0);
@@ -176,5 +171,20 @@ int	main()
 
 	ft_printf("%#c\n", 0);
 	printf("%#c\n", 0);
+
+	ft_printf("{%c}\n", 0);
+	printf("{%c}\n", 0);
+
+	ft_printf("{%3c}\n", 0);
+	printf("{%3c}\n", 0);
+
+	ft_printf("%#.3o\n", 1);
+	printf("%#.3o\n", 1);
+
+	ft_printf("{%#c}\n", 0);
+	printf("{%#c}\n", 0);
+
+	ft_printf("%\n");
+	printf("%\n");
 	return (0);
 }

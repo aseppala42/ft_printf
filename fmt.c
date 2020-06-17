@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:36:54 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/16 20:53:41 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 13:57:47 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ char	*fmt_num(t_format *specs, char *str, char *prefix)
 		str = ft_joindel(ft_memset(ft_strnew(len), '0', len), str);
 	if (specs->type != 'f' && specs->precision >= 0 && specs->flags)
 		ft_rmchr(specs->flags, '0');
+	if (specs->type == 'o' && prefix && *str == '0')
+		ft_strdel(&prefix);
 	str = add_padding(specs, str, prefix);
 	return (!prefix ? str : add_prefix(str, prefix));
 }

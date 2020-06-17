@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:33 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/16 21:06:14 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 15:47:04 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,19 @@ static char	parse_type(char *type)
 	return (0);
 }
 
-int	init_specs(t_format **specs, char *format, va_list args)
+void	new_specs(t_format **specs)
 {
 	*specs = (t_format *)malloc(sizeof(t_format));
+	(*specs)->type = 0;
+	(*specs)->param = 0;
+	(*specs)->width = 0;
+	(*specs)->precision = 0;
+	(*specs)->flags = 0;
+	(*specs)->length = 0;
+}
+
+int	init_specs(t_format **specs, char *format, va_list args)
+{
 	if (!((*specs)->type = parse_type(format)))
 		return (0);
 	if (((*specs)->param = parse_param(format)))

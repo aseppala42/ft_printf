@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:48:53 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/16 13:26:49 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 13:23:21 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 # define MAX_INT	2147483647
 # define MIN_INT	-2147483648
+# define MAX_LL		9223372036854775807
+# define MIN_LL		-9223372036854775808
 # define BUFF_SIZE	51
 # define FD_MAX		4864
 # define MAX_BASE	36

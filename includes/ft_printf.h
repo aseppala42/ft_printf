@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:11 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 18:01:11 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 15:46:02 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ char		*add_padding(t_format *specs, char *str, char *prefix);
 static char	*add_prefix(char *str, char *prefix);
 int		init_specs(t_format **specs, char *format, va_list args);
 void		del_specs(t_format **specs);
+void		new_specs(t_format **specs);
 
 #endif

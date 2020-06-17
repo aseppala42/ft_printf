@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:03 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/15 13:46:14 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/17 15:47:24 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,21 @@ static char	*conversion_specifier(char *format, va_list args[3])
 	char		*tmp;
 	t_format	*specs;
 
-	if (!format || *format == 0)
+	if (!format || *format == 0 || *(format + 1) == 0)
 		return (0);
 	format++;
 	tmp = ft_strndup(format, ft_strcspn(format, TYPE_OPTIONS) + 1);
+	new_specs(&specs);
 	if (init_specs(&specs, tmp, args[ARGS]))
 	{
 		next_arg(args, specs->param);
 		tmp = conversion(specs, specs->param ? args[PARAM] : args[ARGS]);
-		format = ft_strpbrk(format, TYPE_OPTIONS);
+		format = ft_strpbrk(format, TYPE_OPTIONS) + 1;
 	}
 	else
 		tmp = 0;
 	del_specs(&specs);
-	return (format ? ft_joindel(tmp, sprint(++format, args)) : tmp);
+	return (format ? ft_joindel(tmp, sprint(format, args)) : tmp);
 }
 
 static char	*sprint(char *format, va_list args[3])
