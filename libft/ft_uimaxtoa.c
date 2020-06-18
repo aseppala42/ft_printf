@@ -6,20 +6,11 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:01:55 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 18:28:47 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/18 18:21:27 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_uimaxlen(uintmax_t n, unsigned int base)
-{
-	if (base < MIN_BASE || base > MAX_BASE)
-		return (0);
-	if (n > base - 1)
-		return (1 + ft_uimaxlen(n / base, base));
-	return (1);
-}
 
 /*
 **char		*ft_recursive_uimaxtoa(char *str, uintmax_t n, int base, int i)

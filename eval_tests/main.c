@@ -29,6 +29,18 @@ int	main()
 	time = ((double) (end - start)) / CLOCKS_PER_SEC;
 	printf("%f\n", time);
 
+	ft_printf("%.10f\n", 3.9999999999);
+	printf("%.10f\n", 3.9999999999);
+
+	ft_printf("%f\n", 3.9999999999);
+	printf("%f\n", 3.9999999999);
+
+	ft_printf("%.0f\n", 3.9999999999);
+	printf("%.0f\n", 3.9999999999);
+
+	ft_printf("%.3f\n", 3.9999999999);
+	printf("%.3f\n", 3.9999999999);
+
 	ft_printf("%lld\n", -9223372036854775808);
 	printf("%lld\n", -9223372036854775808);
 	ft_printf("%lx\n", 4294967296);

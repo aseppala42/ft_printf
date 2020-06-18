@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:48:53 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 18:30:14 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/18 18:21:11 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,5 +158,7 @@ double			ft_trunc(double x);
 long double		ft_truncl(long double x);
 char			*ft_strtok(char *restrict str, const char *restrict sep);
 size_t			ft_numlen(int n);
+size_t			ft_imaxlen(intmax_t n, int base);
+size_t			ft_uimaxlen(uintmax_t n, unsigned int base);
 
 #endif

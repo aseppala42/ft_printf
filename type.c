@@ -6,7 +6,7 @@
 /*   By: aseppala <aseppala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:37:40 by aseppala          #+#    #+#             */
-/*   Updated: 2020/06/17 19:01:00 by aseppala         ###   ########.fr       */
+/*   Updated: 2020/06/18 18:41:14 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void			*type_float(t_format *specs, va_list args)
 		return (0);
 	if (specs->precision == 0)
 	{
-		return (fmt_num(specs, ft_imaxtoa((intmax_t)num, 10), \
+		return (fmt_num(specs, ft_imaxtoa((intmax_t)ft_roundl(num), 10), \
 			num < 0 ? ft_strdup("-") : 0));
 	}
 	return (fmt_num(specs, ft_ftoa(num, specs->precision), \
